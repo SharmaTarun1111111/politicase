@@ -1,50 +1,54 @@
+import React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+
 const columns = [
-  
-  
-  { field: 'id', headerName: 'ID', width: 90, type: "number"},
-  
+  { 
+    field: 'id', 
+    headerName: 'ID', 
+    width: 90,
+    type: 'number',
+    sortable: false,
+  },
   {
     field: 'merke',
     headerName: 'Bilmerke',
     width: 150,
     editable: false,
     type: 'string',
-
+    sortable: false,
   },
-
   {
     field: 'modell',
     headerName: 'Modell',
     width: 150,
     editable: false,
     type: 'string',
-
+    sortable: false,
   },
   {
     field: 'årsmodell',
     headerName: 'Årsmodell',
-    type: 'number',
+    type: 'string',
     width: 200,
     editable: false,
+    sortable: false,
   },
-  
   {
     field: 'regNr',
     headerName: 'Registreringsnummer',
     type: 'string',
     width: 200,
     editable: false,
+    sortable: false,
   },
- 
   {
     field: 'status',
     headerName: 'Status',
     type: 'string',
     width: 200,
     editable: true,
-    
+    sortable: true,
   },
   {
     field: 'oppdrag',
@@ -52,27 +56,24 @@ const columns = [
     type: 'string',
     width: 110,
     editable: false,
+    sortable: false,
   },
-
 ];
 
-
-
-
-export default function Tabell2({rows}) {
-
-
-  const fiktivKall = (param) => {
+const Table = ({ rows }) => {
+  
+  // Simulated backend call for row update
+  const fiktivKall = (params) => {
+    console.log(params);
     console.log("Backend Oppdatert");
-  }
-//params = hele raden, med all info, slik at backend vil vet hvilken bil det er snakk om slik at backend kangjøre endring 
+    return params;
+  };
 
   return (
     <Box 
-    sx={{
+      sx={{
         display: 'flex',
         textAlign: 'center',
-        justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
         mt: 2,
@@ -86,30 +87,30 @@ export default function Tabell2({rows}) {
           backgroundColor: '#7DCB5B',
           color: '#1a3e72',
         },
-      }}>
+      }}
+    >
       <DataGrid 
-        sx={{width: '98%'}}
-        rows={rows}
-        disableColumnMenu={true}
-        
-        slots={{  toolbar: GridToolbar,  }}
-        columns={columns}
-        initialState={{
-            sorting: {
-                sortModel: [{ field: 'id', sort: 'asc' }],
-              },
-         pageSize: 20,   
+        sx = {{ width: '98%' }}
+        rows = {rows}
+        columns = {columns}
+        disableColumnMenu = {true}  // Disable column menu
+        slots = {{ toolbar: GridToolbar }}  // Toolbar with filters
+        initialState = {{
+          sorting: {
+            sortModel: [{ field: 'id', sort: 'asc' }],
+          },
+          pageSize: 20,
         }}
-        getCellClassName={(params) => {
-            if (params.field !== 'status' || params.value == null) {
-              return '';
-            }
-            return params.value ===  "Tilgjengelig" ? 'hot' : 'cold';
-          }}
-          onCellEditStop={(params) => fiktivKall(params)}
-      
-        
+        getCellClassName = {(params) => {
+          if (params.field !== 'status' || params.value == null) {
+            return '';
+          }
+          return params.value === "Tilgjengelig" ? 'hot' : 'cold';
+        }}
+        processRowUpdate={fiktivKall}
       />
     </Box>
   );
-}
+};
+
+export default Table;
