@@ -1,9 +1,8 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
-import { fetchData } from './services/api.js'
-import Table from './komponenter/Table.js';
-import Header from './komponenter/Header';
-import Footer from './komponenter/Footer';
+import { fetchData } from './Services/Api.js'
+import Table from './Components/Table.js';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   const [database, setDatabase] = useState([])

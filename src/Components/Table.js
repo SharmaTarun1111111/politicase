@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { MutateApiMockup } from '../Services/Api';
 
 const columns = [
   { 
@@ -62,13 +63,6 @@ const columns = [
 
 const Table = ({ rows }) => {
   
-  // Simulated backend call for row update
-  const fiktivKall = (params) => {
-    console.log(params);
-    console.log("Backend Oppdatert");
-    return params;
-  };
-
   return (
     <Box 
       sx={{
@@ -107,7 +101,15 @@ const Table = ({ rows }) => {
           }
           return params.value === "Tilgjengelig" ? 'hot' : 'cold';
         }}
-        processRowUpdate={fiktivKall}
+        
+        // Simulated backend call for row update
+        processRowUpdate = {(updatedRow, originalRow) =>
+          MutateApiMockup(updatedRow)  
+        }
+        onProcessRowUpdateError = {() =>
+          console.log("")
+        } 
+
       />
     </Box>
   );
