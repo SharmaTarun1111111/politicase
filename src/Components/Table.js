@@ -107,7 +107,7 @@ const Table = ({ rows }) => {
           MutateApiMockup(updatedRow)  
         }
         onProcessRowUpdateError = {() =>
-          console.log("")
+          console.log("Error")
         } 
 
       />
