@@ -1,70 +1,58 @@
-# Politicase intervju Tarun Sharma
+# Politicase Tarun Sharma
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Antagelser, Use Case, og Funksjoner som Brukerkrav
 
-## Available Scripts
+### Antagelser:
+- All informasjon om en politibil vises i tabellene.
 
-In the project directory, you can run:
+### Use Case:
+- **Mål:** Lage en webside for oversikt over politibiler med relevant informasjon.
+- **Funksjonalitet:**
+  - Visning av alle politibiler med detaljert informasjon (merke, modell, årsmodell, reg.nummer, status).
+  - Mulighet for filtrering av biler.
+  - Endring av status på biler ved et fiktivt kall til backend.
+  - Henting av dummy-data direkte fra API.
+  - Implementering av tester.
 
-### `npm start`
+## Rammeverk:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bruker React biblioteket med JavaScript for å løse oppgaven.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For å starte React-appen og kjøre en webside, bruker jeg "Create React App" (CRA). Create React App er et offisielt opprettelsesverktøy for React som lar en sette opp en ny React-applikasjon.
 
-### `npm test`
+For å kjøre programmet:
+- Installer Node.js og npm.
+- Installer Create React App og lag en ny React-app: `npx create-react-app my-app`
+- Naviger til prosjektmappen: `cd my-app`
+- Start utviklingsserver: `npm start`
+- Kopier linken fra terminalen: [http://localhost:3000/](http://localhost:3000/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Oppgave:
 
-### `npm run build`
+**Mål:** Lage en webside med følgende funksjonaliteter:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Oversikt over politibiler:**
+  - Visning av relevant informasjon i en tabell (merke, modell, årsmodell, reg.nummer, status).
+- **Filtrering av biler:**
+  - Bruk av tabell for oversikt og gjenkjennelse.
+- **Endring av status på biler:**
+  - Fiktivt kall til backend.
+- **Henting av dummy-data fra API:**
+  - Bruk av en funksjon, `fetchData`, for asynkront kall til API og retur av JSON-array.
+- **Implementering av tester.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Implementasjon:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For å løse oppgaven:
 
-### `npm run eject`
+1. **Henting av mockup-data fra API:**
+   - Bruk av funksjonen `fetchData` for asynkront kall til API og returnering av JSON-array.
+2. **Visning av alle biler i en tabell:**
+   - Bruk av Material UI Tabell-komponent for strukturert og gjenkjennbar visning.
+   - Dynamisk og konsistent utseende.
+3. **Filtrering av biler:**
+   - Bruk av filtreringsfunksjoner for bedre oversikt.
+4. **Endring av status:**
+   - Utforsk hvordan status på biler kan endres.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Merknad:* Bruk av tabell og enkelhet er prioritert i tråd med brukerkrav og brukervennlighet.
