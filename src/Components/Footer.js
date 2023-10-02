@@ -8,7 +8,6 @@ const Footer = () => {
       <center><p>
         <a
           href="https://www.linkedin.com/in/tarun-sharma-profile"
-          target="_blank"
         >
           <LinkedInIcon/>
         </a>
